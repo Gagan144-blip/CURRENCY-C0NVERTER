@@ -5,14 +5,7 @@ const dropdowns = document.querySelectorAll(".dropdown select");
 const btn = document.querySelector("form button");
 const fromCurr = document.querySelector(".from select");
 const toCurr = document.querySelector(".to select");
-const msg = document.querySelector(".msg");
-
-
-
-window.addEventListener("load", () =>{
-  updateExchangeRate();
-});
-
+const msg = document.querySelector(".msg")
 
 
 for (let select of  dropdowns){
@@ -66,7 +59,12 @@ const URL = `${BASE_URL}/${fromCurr.value}/${toCurr.value}`;
 
   let finalAmount = amtVal*rate;
     msg.innerText = `${amtVal} ${fromCurr.value} = ${finalAmount} ${toCurr.value}`;
-}
+};
+btn.addEventListener("click", (evt)=>{
+    evt.preventDefault();
+    updateExchangeRate();
+    
+});
 window.addEventListener("load", () => {
   updateExchangeRate();
 });
