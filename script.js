@@ -1,4 +1,4 @@
-const BASE_URL ="https://v6.exchangerate-api.com/v6/18765b5645967227c1389eb5/pair/";
+const BASE_URL ="https://api.exchangerate.host/convert?";
 
 
 const dropdowns = document.querySelectorAll(".dropdown select");
@@ -51,7 +51,7 @@ const updateExchangeRate = async () =>{
    // console.log(fromCurr.value,toCurr.value);
   // https://api.frankfurter.app/latest?amount=${amount}&from=${fromCurr}&to=${toCurr}
   //https://api.frankfurter.app/latest?amount=1&//from=INR&to=JPY
-const URL = `${BASE_URL}/${fromCurr.value}/${toCurr.value}`;
+const URL = `${BASE_URL}/from=${fromCurr.value}&to=/${toCurr.value}`;
   let response = await fetch(URL);
   let data = await response.json();
   let rate = data.conversion_rate;
