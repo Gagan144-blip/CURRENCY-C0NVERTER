@@ -67,6 +67,6 @@ const URL = `${BASE_URL}/${fromCurr.value}/${toCurr.value}`;
   let finalAmount = amtVal*rate;
     msg.innerText = `${amtVal} ${fromCurr.value} = ${finalAmount} ${toCurr.value}`;
 }
-window.addEventListener("load", () =>{
+window.addEventListener("load", () => {
   updateExchangeRate();
-})
+});
