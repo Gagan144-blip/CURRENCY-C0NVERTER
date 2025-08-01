@@ -1,11 +1,10 @@
-const BASE_URL ="https://api.exchangerate.host/convert?";
+const BASE_URL ="https://api.frankfurter.app.app";
 
 
 const dropdowns = document.querySelectorAll(".dropdown select");
 const btn = document.querySelector("form button");
 const fromCurr = document.querySelector(".from select");
 const toCurr = document.querySelector(".to select");
-<<<<<<< HEAD
 const msg = document.querySelector(".msg");
 
 
@@ -14,9 +13,6 @@ window.addEventListener("load", () =>{
   updateExchangeRate();
 });
 
-=======
-const msg = document.querySelector(".msg")
->>>>>>> 2cb9b7085f782d6a36d57fb192f8b884d3645bc4
 
 
 for (let select of  dropdowns){
@@ -62,9 +58,11 @@ const updateExchangeRate = async () =>{
    // console.log(fromCurr.value,toCurr.value);
   // https://api.frankfurter.app/latest?amount=${amount}&from=${fromCurr}&to=${toCurr}
   //https://api.frankfurter.app/latest?amount=1&//from=INR&to=JPY
-const URL = `${BASE_URL}/from=${fromCurr.value}&to=/${toCurr.value}`;
+
+const URL = `${BASE_URL}/latest?amount=${amount}&from=${fromCurr}&to=${toCurr}`;
   let response = await fetch(URL);
   let data = await response.json();
+  console.log(data);
   let rate = data.conversion_rate;
 
 
