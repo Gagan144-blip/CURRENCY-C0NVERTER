@@ -11,7 +11,7 @@ const msg = document.querySelector(".msg");
 
 window.addEventListener("load", () =>{
   updateExchangeRate();
-})
+});
 
 
 
