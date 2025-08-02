@@ -57,14 +57,14 @@ const updateExchangeRate = async () =>{
   // https://api.frankfurter.app/latest?amount=${amtVal}&from=${fromCurr}&to=${toCurr}
   //https://api.frankfurter.app/latest?amount=1&//from=INR&to=JPY
 
-const URL = `${BASE_URL}/latest?amount=${amtVal}&from=${fromCurr}&to=${toCurr}`;
+const URL = `${BASE_URL}/latest?amount=${amtVal}&from=${fromCurr.value.toUpperCase()}&to=${toCurr.toUpperCase()}`;
   let response = await fetch(URL);
   let data = await response.json();
   let rate = data.conversion_rate;
 
 
   let finalAmount = amtVal*rate;
-    msg.innerText = `${amtVal} ${fromCurr.value} = ${finalAmount} ${toCurr.value}`;
+    msg.innerText = `${amtVal} ${fromCurr} = ${finalAmount} ${toCurr}`;
 };
 btn.addEventListener("click", (evt)=>{
     evt.preventDefault();
@@ -73,4 +73,5 @@ btn.addEventListener("click", (evt)=>{
 });
 window.addEventListener("load", () => {
   updateExchangeRate();
-});
+});a
+
