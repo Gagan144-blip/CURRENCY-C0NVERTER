@@ -54,13 +54,12 @@ const updateExchangeRate = async () =>{
         amount.Value = "1";
     }
    // console.log(fromCurr.value,toCurr.value);
-  // https://api.frankfurter.app/latest?amount=${amount}&from=${fromCurr}&to=${toCurr}
+  // https://api.frankfurter.app/latest?amount=${amtVal}&from=${fromCurr}&to=${toCurr}
   //https://api.frankfurter.app/latest?amount=1&//from=INR&to=JPY
 
-const URL = `${BASE_URL}/latest?amount=${amount}&from=${fromCurr}&to=${toCurr}`;
+const URL = `${BASE_URL}/latest?amount=${amtVal}&from=${fromCurr}&to=${toCurr}`;
   let response = await fetch(URL);
   let data = await response.json();
-  console.log(data);
   let rate = data.conversion_rate;
 
 
